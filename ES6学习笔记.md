@@ -333,6 +333,7 @@
     
 - ### Proxy Reflect
     #### 1. Proxy
+    
     ```javascript
     {
         let obj = {
