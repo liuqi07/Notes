@@ -333,8 +333,8 @@
     
 - ### Proxy Reflect
     #### 1. Proxy
-    ```
-    {
+    ```javascript
+    {
         let obj = {
             time: '2017-03-11',
             name: 'net',
@@ -390,7 +390,7 @@
     ```
 
     #### 2. Reflect
-    ```
+    ```javascript
     let obj = {
         time: '2017-03-11',
         name: 'net',
