@@ -16,20 +16,20 @@
 - ### 数组扩展
 
     #### 1. Array.of
-    ```
+    ```javascript
     let arr = Array.of(3,4,7,9,11);
     console.log('arr=', arr);
     // arr= [3,4,7,9,11]
     ```
     #### 2. Array.from
-    ```
+    ```javascript
     console.log(Array.from([1,2,3], function(item){
         return item * 2;
     }));
     // [2,4,6];
     ```
     #### 3. Array.fill
-    ```
+    ```javascript
     console.log([1,'a', 3].fill(7));
     // [7,7,7];
     console.log([1,'a', 3].fill(7, 1, 3));
@@ -38,7 +38,7 @@
     // x 替换为的值 y 从什么位置开始替换（含） 3替换的结束位置（不含）
     ```
     #### 4. Array.keys() Array.values() Array.entries()
-    ```
+    ```javascript
     var arr = ['a', 'b', 'c'];
     console.log(arr.keys)
     // Array Iterator {}
@@ -64,7 +64,7 @@
     ```
     
     #### 5. Array.copyWithin
-    ```
+    ```javascript
     var arr = [1, 2, 3, 4, 5, 6, 7];
     console.log(arr.copyWithin(0, 3, 5))
     // [4, 5, 3, 4, 5, 6, 7]
@@ -98,6 +98,7 @@
     
 - ### 函数扩展
     #### 1. 参数默认值
+
     ```javascript
     function test (x, y='world') {
         console.log(x, y)
@@ -109,7 +110,7 @@
     ```
     
     #### 2. 作用域
-    ```
+    ```javascript
     let x = 'hello';
     function test (x, y=x) {
         console.log(x, y);
@@ -119,7 +120,7 @@
     ```
     
     #### 3. rest参数
-    ```
+    ```javascript
     function test (...arg) {
         console.log(arg)
     }
@@ -130,13 +131,13 @@
     ```
     
     #### 4. 箭头函数
-    ```
+    ```javascript
     let arrow = v => v * 2;
     console.log(arrow(3)); // 6
     ```
     
     #### 5. 伪调用
-    ```
+    ```javascript
     function tail(x) {
         console.log(x);
     }
@@ -148,7 +149,8 @@
     
 - ### 对象扩展
     #### 1. 简洁表示法
-    ```
+
+    ```javascript
     let o = 1; 
     let k = 2;
     let obj = {o, k};
@@ -168,7 +170,7 @@
     ```
     
     #### 2. 属性表达式
-    ```
+    ```javascript
     let a = 'b';
     let es5_obj = {
         a: 'c'
@@ -181,7 +183,7 @@
     ```
     
     #### 3. 新增API
-    ```
+    ```javascript
     console.log('字符串', Object.is('abc', 'abc'), 'abc'==='abc')
     // 字符串 true true
     console.log('数组', Object.is([], []), []===[])
@@ -201,7 +203,7 @@
     ```
     
     #### 4. 扩展运算符
-    ```
+    ```javascript
     let {a, b, ...c} = {a: 'aaa', b: 'bbb', c: 'ccc', d: 'ddd'}
     console.log(c);
     // {c:'ddd', d:'ddd'}
@@ -214,7 +216,9 @@
     2. 基本数据类型有6种：Undefined、Null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object），
     这里新添加了一种：Symbol
     3. 注意，Symbol函数前不能使用new命令，否则会报错。这是因为生成的Symbol是一个原始类型的值，不是对象，Symbol函数可以接受一个字符串作为参数，表示对Symbol实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。
-    ```
+    
+
+    ```javascript
     let a1 = Symbol();
     let a2 = Symbol();
     console.log(a1===a2); // false
@@ -225,7 +229,7 @@
     ```
     
     #### 2. Symbol的作用
-    ```
+    ```javascript
     let a1 = Symbol.for('abc');
     let obj = {
         [a1]: 123,
@@ -254,6 +258,7 @@
     
 - ### 数据结构
     #### 1. Set
+
     ```javascript
     let list = new Set();
     list.add(5);
@@ -301,7 +306,7 @@
     ```
     
     #### 2. WeakSet
-    ```
+    ```javascript
     let weakList = new WeakSet();
     let arg = {};
     weakList.add(arg); // 写法正确
@@ -309,13 +314,13 @@
     ```
     
     #### 4. Map
-    ```
+    ```javascript
     let map = new Map();
     let arr = ['123'];
     map.set(arr, 456);
     console.log('map',map,map.get(arr));
     ```
-    ```
+    ```javascript
     let map = new Map([['a',123],['b',456]]);
     console.log('map args',map);
     console.log('size',map.size);
@@ -324,7 +329,7 @@
     ```
     注：Map的属性操作和遍历和Set基本一样。
     #### 4. WeakMap
-    ```
+    ```javascript
     let weakmap=new WeakMap();
     let o={};
     weakmap.set(o,123);
@@ -333,9 +338,9 @@
     
 - ### Proxy Reflect
     #### 1. Proxy
-    
-    ```javascript
-    {
+
+    ```javascript
+    {
         let obj = {
             time: '2017-03-11',
             name: 'net',
@@ -391,6 +396,7 @@
     ```
 
     #### 2. Reflect
+    
     ```javascript
     let obj = {
         time: '2017-03-11',
@@ -630,7 +636,7 @@
 - ### Iterator 和 for...of循环
 
     #### 1. 示例
-    ```
+    ```javascript
     let arr = ['hello', 'world'];
     let map = arr[Symbol.iterator]();
     console.log(map.next());
